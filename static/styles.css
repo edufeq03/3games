@@ -1,0 +1,172 @@
+/* styles.css */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+#container {
+    position: relative;
+    width: 80%;
+    height: 80%;
+    background-color: #ffffff;
+    overflow: hidden;
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#moving-image {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    left: -40px; /* Start position */
+    transform: translateY(-50%);
+}
+
+#buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    position: absolute;
+    bottom: 50px;
+}
+
+button.game-button {
+    flex: 1 0 21%; /* Aloca 21% do espaço por botão para manter 4 por linha */
+    padding: 10px; /* Ajustar o padding dos botões */
+    font-size: 16px; /* Ajustar o tamanho da fonte */
+    margin: 5px;
+    background-color: #007bff; /* Cor inicial do botão para contraste */
+    color: #ffffff; /* Cor do texto */
+    border: none;
+    border-radius: 5px;
+    max-width: calc(50% - 20px); /* Garantir que cada botão ocupe no máximo 50% da largura em telas menores */
+}
+
+button.game-button:hover {
+    background-color: #0056b3; /* Cor do botão ao passar o mouse */
+}
+
+button.game-button.clicked {
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
+    background-color: lightgreen;
+}
+
+#selected-name {
+    position: absolute;
+    bottom: 90px;
+    font-size: 20px;
+}
+
+#controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+button#start-button {
+    background-color: #28a745;
+    color: white;
+}
+
+button#serve-button {
+    background-color: #007bff;
+    color: white;
+}
+
+button#start-button:hover {
+    background-color: #218838;
+}
+
+button#serve-button:hover {
+    background-color: #0056b3;
+}
+
+input {
+    width: 100%;
+}
+
+/* Additional styles for game over and ranking pages */
+.game-over-container, .ranking-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.table-responsive {
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #000;
+    text-align: center;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Ajustes específicos para dispositivos móveis */
+@media (max-width: 768px) {
+    #container {
+        width: 90%;
+        height: 70%;
+    }
+
+    #buttons-container {
+        bottom: 40px;
+    }
+
+    button.game-button {
+        flex: 1 0 48%; /* Aloca 48% do espaço por botão para manter 2 por linha em telas menores */
+        max-width: 100%;
+    }
+
+    #selected-name {
+        bottom: 70px;
+        font-size: 18px;
+    }
+
+    #controls {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    button#start-button, button#serve-button {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+}
+
+.btn-lanche.active {
+    background-color: lightgreen !important;
+}
